@@ -20,9 +20,8 @@ def get_pose_err(pose_gt, pose_est):
 rot_err_list = []
 transl_err_list = []
 
-#DIR = "/home/msg/ProjectCodes/Dense-Scene-Matching-master/RGB_SCM_DATA/train/SCM/" # orig
 
-DIR = "/home/istek/ProjectCodes/contrastive-unpaired-translation/results/chess_CUT/test_latest/images/fake_B/" # generated
+DIR = "/SCM_DIR/" # generated
 
 PRE_NAME = "fake"
 SIZE_H = 480
@@ -37,7 +36,7 @@ for i in range(2000):
     coord = np.load(DIR + PRE_NAME+str(i).zfill(6)+".npy").squeeze()
     #print(coord.shape)
     coord = coord.transpose(1,2,0)
-    tcw = np.load("/home/istek/Datasets/7scenes/chess_scm/test/MIS/tcw_"+str(i).zfill(6)+".npy")
+    tcw = np.load("/tcw_"+str(i).zfill(6)+".npy")
 
     #print(coord.shape)
     #print(tcw)
